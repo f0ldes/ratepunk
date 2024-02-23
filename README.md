@@ -1,1 +1,1 @@
-## RatePunk demo project @ FPT - 2024. # ratepunk
+## RatePunk demo project @ PTF - 2024.
