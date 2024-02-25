@@ -7,4 +7,76 @@
     background: #45565E 0% 0% no-repeat padding-box;
     border: 1px solid #1F343E;
     opacity: 1;
-}
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+};
+
+.linkButton {
+    width: 312px;
+    height: 80px;
+    border: 1px solid #1F343E;
+    border-radius: 16px;
+    margin: 8px;
+
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        p {
+            font: normal normal normal 16px/16px Noto Sans;
+            letter-spacing: 0px;
+            color: #F8F4F9;
+            opacity: 1;
+            margin: 4px;
+        }
+
+        h1 {
+            font: normal normal bold 20px/16px Gadugi;
+            letter-spacing: 0px;
+            color: #F8F4F9;
+            opacity: 1;
+            margin: 4px
+        }
+    }
+};
+
+.linkButtonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    height: 100%;
+};
+
+.ratingContainer {
+    width: 343px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    margin-left: 15px;
+
+    p {
+            text-align: left;
+            font: normal normal normal 20px/24px Noto Sans;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            opacity: 1;
+        }
+
+};
