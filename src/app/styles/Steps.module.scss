@@ -1,0 +1,64 @@
+
+/* ---------------------- */
+
+.stepsContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+};
+
+.stepContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 448px;
+    height: 191p
+};
+
+.stepStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-left: 15px;
+};
+
+/* ---------------------- */
+
+.stepTitle {
+    text-align: left;
+    font: normal normal bold 20px/32px Noto Sans;
+    letter-spacing: 1.6px;
+    color: #4EB3E3;
+    text-transform: uppercase;
+    opacity: 1;
+};
+
+.stepInvite {
+    text-align: left;
+    font: normal normal normal 24px/56px 'Caveat Brush', cursive;
+    letter-spacing: 0px;
+    color: #1F343E;
+    text-transform: uppercase;
+    opacity: 1;
+};
+
+.stepText {
+    text-align: left;
+    font: normal normal normal 20px/32px Noto Sans;
+    letter-spacing: 0px;
+    color: #1F343E;
+    opacity: 1;
+};
+
+.stepTextContainer {
+    width: 256px;
+    height: 191px;
+};
+
+/* ---------------------- */

@@ -13,7 +13,7 @@ $sub-div-color: red;
 }
 
 .blogStyle {
-    margin-left: 10px;
+    margin-left: 20px;
     display: flex;
     justify-content: flex-start;
     height: 32px; // Added px to make the value valid
@@ -39,7 +39,7 @@ $sub-div-color: red;
 
         div {
             margin: 0px;
-            width: 420px;
+            width: 544px;
             display: flex;
             justify-content: flex-start; // Centers the sub-div horizontally in the div
             align-items: center; // Centers the sub-div vertically in the div
@@ -48,7 +48,7 @@ $sub-div-color: red;
                 /* Layout Properties */
                 top: 28px;
                 left: 1016px;
-                width: 172px;
+                width: 182px;
                 height: 27px;
                 /* UI Properties */
                 text-align: center;
@@ -60,7 +60,7 @@ $sub-div-color: red;
             }
 
             div {
-                margin: 10px;
+                margin: 20px;
                 //background: $sub-div-color;
                 height: 32px; // Added px to make the value valid
                 width: auto; // Added px to make the value valid
