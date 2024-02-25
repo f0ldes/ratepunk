@@ -1,4 +1,40 @@
 
+.titlePanel {
+    /* Layout Properties */
+    //top: 208px;
+    //left: 464px;
+    width: 416px;
+    height: 132px;
+    /* UI Properties */
+    text-align: left;
+
+    p {
+        font: normal normal normal 34px/56px 'Caveat Brush', cursive;
+        letter-spacing: 0;
+        color: #1F343E;
+        text-transform: uppercase;
+        opacity: 1;
+    }
+}
+
+.textPanel {
+    /* Layout Properties */
+    top: 372px;
+    left: 464px;
+    width: 416px;
+    height: 123px;
+
+    p {
+        /* UI Properties */
+        text-align: left;
+        font: normal normal normal 20px/32px Noto Sans;
+        letter-spacing: 0px;
+        color: #1F343E;
+        opacity: 1;
+    }
+}
+
+
 .mainContent {
     width: 1920px;
     height: 925px;
@@ -13,10 +49,50 @@
     align-items: center;
     justify-content: center;
 
-    div {
-        background: white;
-        width: 45%;
-        height: 90%;
+    .leftElement {
+            /* Layout Properties */
+            top: 144px;
+            left: 400px;
+            width: 544px;
+            height: 797px;
+            /* UI Properties */
+            padding: 64px;
+            background: #F8F4F9 0% 0% no-repeat padding-box;
+            border: 1px solid #1F343E;
+            border-radius: 16px;
+            opacity: 1;
+    
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            
+            
+            .bottomText {
+                /* Layout Properties */
+                top: 856px;
+                left: 464px;
+                width: 416px;
+                height: 22px;
+                /* UI Properties */
+                text-align: left;
+                font: normal normal normal 19px/32px Noto Sans;
+                letter-spacing: 0px;
+                color: #6D7A80;
+                opacity: 1;
+            }
+    };
+
+    .rightElement {
+        top: 144px;
+        left: 400px;
+        width: 544px;
+        height: 797px;
+        padding: 64px;
+        /* UI Properties */
+        //background: #F8F4F9 0% 0% no-repeat padding-box;
+        //border: 1px solid #1F343E;
+        //border-radius: 16px;
+        opacity: 1;
     };
 
 };
