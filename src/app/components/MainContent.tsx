@@ -28,6 +28,7 @@ const MainContent = () => {
           <TextElement />
           <EmailElement />
         </div>
+        <div className={styles.boxSpace} ></div>
         <div>
           <p className={styles.bottomText}>Limits on max rewards apply.</p>
         </div>

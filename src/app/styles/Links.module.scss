@@ -1,8 +1,8 @@
 .linkElement {
     top: 1005px;
     left: 0px;
-    width: 1920px;
-    height: 144px;
+    width: 100%;
+    height: 100%;
 
     background: #45565E 0% 0% no-repeat padding-box;
     border: 1px solid #1F343E;
@@ -14,12 +14,35 @@
     flex-direction: row;
 };
 
+.containerStyle {
+    width: 77%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    @media (max-width: 600px) {
+        margin-top: 15px;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    //border: 1px solid white;
+};
+
 .linkButton {
     width: 312px;
     height: 80px;
     border: 1px solid #1F343E;
     border-radius: 16px;
-    margin: 8px;
+    margin: 15px;
+    @media (max-width: 600px) {
+        margin-top: 15px;
+        margin: 0px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
 
     padding: 5px;
     display: flex;
@@ -30,8 +53,53 @@
     a {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: row;
+        width: 80%;
+
+        p {
+            font: normal normal normal 16px/16px Noto Sans;
+            letter-spacing: 0px;
+            color: #F8F4F9;
+            opacity: 1;
+            margin: 4px;
+        
+        }
+
+        h1 {
+            font: normal normal bold 20px/16px Gadugi;
+            letter-spacing: 0px;
+            color: #F8F4F9;
+            opacity: 1;
+            margin: 4px
+        }
+    }
+};
+
+.linkButtonLeft {
+    width: 312px;
+    height: 80px;
+    border: 1px solid #1F343E;
+    border-radius: 16px;
+    margin-right: 35px;
+    @media (max-width: 600px) {
+        margin: 0px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    padding: px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 80%;
 
         p {
             font: normal normal normal 16px/16px Noto Sans;
@@ -56,8 +124,19 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    @media (max-width: 600px) {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    //border: 1px solid white;
+
+        
+    //border: 1px solid #1F343E;
 
     height: 100%;
+    margin-right: 10px;
+    margin-left: 0px;
 };
 
 .ratingContainer {
@@ -66,17 +145,22 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
 
-    margin-left: 15px;
+    margin-left: 0px;
+    margin-right: 20px;
+
+    //border: 1px solid white;
 
     p {
             text-align: left;
-            font: normal normal normal 20px/24px Noto Sans;
+            font: normal normal normal 18px/20px Noto Sans;
             letter-spacing: 0px;
             color: #FFFFFF;
             opacity: 1;
+            margin-top: 4px;
+            margin-left: 10px;
         }
 
 };

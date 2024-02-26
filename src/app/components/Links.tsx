@@ -3,7 +3,7 @@ import styles from '../styles/Links.module.scss'
 
 const LinkButton = () => {
     return (
-        <div className={styles.linkButton}>
+        <div className={styles.linkButtonLeft}>
             <a href="https://www.ratepunk.com/">
                 <div>
                     <img src="/assets/chrome.svg" alt="chrome" />
@@ -11,6 +11,22 @@ const LinkButton = () => {
                 <div>
                     <p>avaible in the</p>
                     <h1>chrome webstore</h1>
+                </div>
+            </a>
+        </div>
+    )
+};
+
+const LinkButtonRight = () => {
+    return (
+        <div className={styles.linkButton}>
+            <a href="https://www.ratepunk.com/">
+                <div>
+                    <img src="/assets/apple.svg" alt="appstore" />
+                </div>
+                <div>
+                    <p>avaible in the</p>
+                    <h1>apple app store</h1>
                 </div>
             </a>
         </div>
@@ -30,19 +46,20 @@ const LinkButtons = () => {
   return (
     <div className={styles.linkButtonsContainer}>
       <LinkButton />
-      <LinkButton />
+      <LinkButtonRight />
     </div>
   );
 };
 
 const LinkSection = () => {
     return (
-        <div className={styles.linkElement}>
-            <LinkButtons />
-            <RatingElement />
+      <div className={styles.linkElement}>
+        <div className={styles.containerStyle}>
+          <LinkButtons />
+          <RatingElement />
         </div>
-    )
+      </div>
+    );
 };
-
 
 export default LinkSection;

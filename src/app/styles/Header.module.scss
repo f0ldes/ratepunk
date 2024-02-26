@@ -9,7 +9,22 @@ $sub-div-color: red;
 @mixin responsive-header {
     @media (max-width: 600px) {
         font-size: 14px;
-    }
+    
+        // Hide the current navigation links
+        nav > div > div {
+          display: none;
+        }
+
+        img {
+            margin: 10px;
+        }
+    
+      }
+    
+      // Ensure the menu icon is hidden on larger screens
+      .menuIcon {
+        display: none;
+      }
 }
 
 .blogStyle {
@@ -23,7 +38,7 @@ $sub-div-color: red;
 .header {
     top: 0px;
     left: 0px;
-    width: 1920px;
+    width: 100%;
     height: 80px;
 
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -33,7 +48,7 @@ $sub-div-color: red;
 
     nav {
         height: 100%;
-        width: 1920px;
+        width: 100%;
         display: flex;
         justify-content: center; // To evenly space the divs across the header
 
@@ -61,9 +76,8 @@ $sub-div-color: red;
 
             div {
                 margin: 20px;
-                //background: $sub-div-color;
-                height: 32px; // Added px to make the value valid
-                width: auto; // Added px to make the value valid
+                height: 32px; 
+                width: auto; 
             }
         }
     }
