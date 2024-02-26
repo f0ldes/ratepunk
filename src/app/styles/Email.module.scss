@@ -1,8 +1,8 @@
 
 .feedBack {
     /* Layout Properties */
-    top: 535px;
-    left: 464px;
+    //top: 535px;
+    //left: 464px;
     width: 100%;
     height: 17px;
     margin-bottom: 10px;
@@ -23,12 +23,16 @@
 
 .inputField {
 
+    width: 100%;
+    
     input {
-        top: 559px;
-        left: 464px;
+        //top: 559px;
+        //left: 464px;
         width: 416px;
+        @media (max-width: 600px) {
+            width: 100%;
+        }
         height: 64px;
-
         background: #FFFFFF 0% 0% no-repeat padding-box;
         color:#344a55;
         border: 1px solid #1F343E;
@@ -36,6 +40,7 @@
         opacity: 1;
 
         padding-left: 60px;
+
         font-size: larger
     };
 
@@ -51,12 +56,14 @@
 };
 
 .buttonField {
+
+    width: 100%;
     margin-top: 0px;
 
     button {
-        top: 639px;
-        left: 464px;
-        width: 416px;
+        //top: 639px;
+        //left: 464px;
+        width: 100%;
         height: 64px;
     
         background: #4EB3E3 0% 0% no-repeat padding-box;

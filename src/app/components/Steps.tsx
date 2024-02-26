@@ -1,49 +1,56 @@
 import React from "react";
 import styles from "../styles/Steps.module.scss";
 
-const Step = () => {
-  return (
-    <div className={styles.stepStyle}>
-      <div>
-        <p className={styles.stepTitle}>
-          <strong> Step 1 </strong>
-        </p>
-      </div>
-      <div>
-        <p className={styles.stepInvite}>Invite Friends</p>
-      </div>
-      <div>
-        <p className={styles.stepText}>
-          Refer friends with your unique referral link.
-        </p>
-      </div>
-    </div>
-  );
-};
+interface StepProps {
+  phase: string;
+  title: string;
+  text: string;
+  imgSrc?: string;
+  imgPosition?: 'left' | 'right';
+}
 
-const StepsContainer = () => {
-  return (
-    <div className={styles.stepsContainer}>
-      <div className={styles.stepContainer}>
-        <img src="/assets/invite.svg" alt="invite" />
-        <div className={styles.stepTextContainer}>
-          <Step />
-        </div>
+const stepContent: StepProps[] = [
+  {
+    phase: "Step 1",
+    title: "INVITE FRIENDS",
+    text: "Refer friends with your unique referral link.",
+    imgSrc: "/assets/invite.svg",
+    imgPosition: 'left'
+  },
+  {
+    phase: "Step 2",
+    title: "COLLECT COINS",
+    text: "Get 1 coin for each friend that installs our extension using your referral link.",
+    imgSrc: "/assets/collect-coins.svg",
+    imgPosition: 'right'
+  },
+  {
+    phase: "Step 3",
+    title: "GET VOUCHER",
+    text: "Redeem for a $20 hotel booking voucher once you collect 20 coins.",
+    imgSrc: "/assets/voucher.svg",
+    imgPosition: 'left'
+  },
+];
+
+const Step: React.FC<StepProps> = ({ phase, title, text }) => (
+  <div className={styles.stepStyle}>
+    <div><p className={styles.stepTitle}><strong>{phase}</strong></p></div>
+    <div><p className={styles.stepInvite}>{title}</p></div>
+    <div><p className={styles.stepText}>{text}</p></div>
+  </div>
+);
+
+const StepsContainer: React.FC = () => (
+  <div className={styles.stepsContainer}>
+    {stepContent.map(({ imgSrc, imgPosition, ...props }, index) => (
+      <div key={index} className={styles.stepContainer}>
+        {imgPosition === 'left' && <img src={imgSrc} alt="Step image" />}
+        <div className={styles.stepTextContainer}><Step {...props} /></div>
+        {imgPosition === 'right' && <img src={imgSrc} alt="Step image" />}
       </div>
-      <div className={styles.stepContainer}>
-        <div className={styles.stepTextContainer}>
-          <Step />
-        </div>
-        <img src="/assets/collect-coins.svg" alt="collect" />
-      </div>
-      <div className={styles.stepContainer}>
-        <img src="/assets/voucher.svg" alt="voucher" />
-        <div className={styles.stepTextContainer}>
-          <Step />
-        </div>
-      </div>
-    </div>
-  );
-};
+    ))}
+  </div>
+);
 
 export default StepsContainer;
