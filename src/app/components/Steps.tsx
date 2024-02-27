@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useContext } from "react";
 import styles from "../styles/Steps.module.scss";
@@ -9,7 +9,7 @@ interface StepProps {
   title: string;
   text: string;
   imgSrc?: string;
-  imgPosition?: 'left' | 'right';
+  imgPosition?: "left" | "right";
 }
 
 const Step: React.FC<StepProps> = ({ phase, title, text }) => (
@@ -37,21 +37,21 @@ const StepsContainer: React.FC = () => {
       title: "INVITE FRIENDS",
       text: "Refer friends with your unique referral link.",
       imgSrc: "/assets/invite.svg",
-      imgPosition: 'left'
+      imgPosition: "left",
     },
     {
       phase: "Step 2",
       title: "COLLECT COINS",
       text: "Get 1 coin for each friend that installs our extension using your referral link.",
       imgSrc: "/assets/collect-coins.svg",
-      imgPosition: isMobile ? 'left' : 'right'
+      imgPosition: isMobile ? "left" : "right",
     },
     {
       phase: "Step 3",
       title: "GET VOUCHER",
       text: "Redeem for a $20 hotel booking voucher once you collect 20 coins.",
       imgSrc: "/assets/voucher.svg",
-      imgPosition: 'left'
+      imgPosition: "left",
     },
   ];
 

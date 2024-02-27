@@ -6,7 +6,7 @@ import { updateEmailAndReferral } from "./emailHandler/saveEmail";
 export interface AppContextType {
   isMobile: boolean;
   email: string;
-  referalCode: string,
+  referalCode: string;
   setIsMobile: (isMobile: boolean) => void;
   setEmail: (email: string) => void;
   setReferalCode: (referalCode: string) => void;
@@ -15,20 +15,20 @@ export interface AppContextType {
 
 const defaultContextValue: AppContextType = {
   isMobile: false,
-  email: '',
-  referalCode: '',
+  email: "",
+  referalCode: "",
   setIsMobile: () => {},
   setEmail: () => {},
   setReferalCode: () => {},
-  updateEmailAndReferral: async () => {}
+  updateEmailAndReferral: async () => {},
 };
 
 const AppContext = createContext<AppContextType>(defaultContextValue);
 
 const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>('');
-  const [referalCode, setReferalCode] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [referalCode, setReferalCode] = useState<string>("");
 
   const handleUpdateEmailAndReferral = async (email: string) => {
     await updateEmailAndReferral(email, setReferalCode);
@@ -40,16 +40,22 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <AppContext.Provider value={{ 
-      isMobile, setIsMobile,
-      email, setEmail,
-      referalCode, setReferalCode,
-      updateEmailAndReferral: handleUpdateEmailAndReferral }}>
+    <AppContext.Provider
+      value={{
+        isMobile,
+        setIsMobile,
+        email,
+        setEmail,
+        referalCode,
+        setReferalCode,
+        updateEmailAndReferral: handleUpdateEmailAndReferral,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

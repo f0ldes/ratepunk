@@ -1,33 +1,37 @@
-'use client'
+"use client";
 
 import React, { useContext, ChangeEvent, useState } from "react";
-import styles from '../styles/Email.module.scss';
+import styles from "../styles/Email.module.scss";
 import { AppContext } from "../context/AppContext";
 import { checkEmail } from "../context/emailHandler/saveEmail";
 
-
 const ConfirmEmail = () => {
-    return (
-        <div className={styles.successField} >
-            <img src="/assets/success.svg" alt="success" />
-            <p><strong> Your email is confirmed! </strong></p>
-        </div>
-    )
+  return (
+    <div className={styles.successField}>
+      <img src="/assets/success.svg" alt="success" />
+      <p>
+        <strong> Your email is confirmed! </strong>
+      </p>
+    </div>
+  );
 };
 
 type HandleErrorProps = {
-    error: string;
+  error: string;
 };
-const ErrorMessage: React.FC<HandleErrorProps> = ({error}) => {
-    return (
-        <div className={styles.errorStyle} >
-            <p><strong>{error}</strong></p>
-        </div>
-    )
-}
+const ErrorMessage: React.FC<HandleErrorProps> = ({ error }) => {
+  return (
+    <div className={styles.errorStyle}>
+      <p>
+        <strong>{error}</strong>
+      </p>
+    </div>
+  );
+};
 
 const EmailElement = () => {
-  const { email, setEmail, referalCode, updateEmailAndReferral, isMobile } = useContext(AppContext);
+  const { email, setEmail, referalCode, updateEmailAndReferral, isMobile } =
+    useContext(AppContext);
   const [error, setError] = useState<string>("");
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +40,6 @@ const EmailElement = () => {
       setError("");
     }
   };
-
 
   const handleClick = async () => {
     if (email) {
@@ -50,12 +53,12 @@ const EmailElement = () => {
   };
 
   const handleCopyLink = async () => {
-    const textToCopy = referalCode ? referalCode : email; 
+    const textToCopy = referalCode ? referalCode : email;
     try {
-      await navigator.clipboard.writeText(textToCopy); 
-      alert("Link copied to clipboard!"); 
+      await navigator.clipboard.writeText(textToCopy);
+      alert("Link copied to clipboard!");
     } catch (err) {
-      console.error("Failed to copy: ", err); 
+      console.error("Failed to copy: ", err);
     }
   };
 
@@ -107,10 +110,7 @@ const EmailElement = () => {
       {referalCode && isMobile && (
         <>
           <div className={styles.referalInput}>
-            <input
-              placeholder={referalCode}
-              value={referalCode}
-            />
+            <input placeholder={referalCode} value={referalCode} />
           </div>
           <div className={styles.buttonField}>
             <button onClick={handleCopyLink}>

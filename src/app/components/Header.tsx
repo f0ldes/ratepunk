@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import styles from "../styles/Header.module.scss";
@@ -41,7 +41,6 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ setDropdown }) => {
     </div>
   );
 };
-
 
 const Header = () => {
   const [dropDown, setDropdown] = useState<boolean>(false);

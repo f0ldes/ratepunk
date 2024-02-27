@@ -43,8 +43,6 @@ const checkEmail = (email:string, error:string, setError: Dispatch<SetStateActio
 const updateEmailAndReferral = async (email: string, setReferalCode: AppContextType['setReferalCode']) => {
   const binId = process.env.NEXT_PUBLIC_BIN_ID; 
   const apiKey = '$2a$10$BgQIPNNJM7rlgiayuEu86.svGm6hD4HkrrW7RZLOp1Pus0OchDLRq';
-
-  console.log(binId, 'apikey:', apiKey )
   
     try {
       const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
