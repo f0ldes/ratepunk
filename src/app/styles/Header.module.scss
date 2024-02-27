@@ -1,86 +1,104 @@
 
-$primary-color: #FFFFFF;
-$link-color: #ffd500;
-//$link-hover-color: darken($link-color, 15%);
-//$border-color: #1F343E;
-$primary-color: #007bff;
-$sub-div-color: red;
-
-@mixin responsive-header {
-    @media (max-width: 600px) {
-        font-size: 14px;
-    
-        // Hide the current navigation links
-        nav > div > div {
-          display: none;
-        }
-
-        img {
-            margin: 10px;
-        }
-    
-      }
-    
-      // Ensure the menu icon is hidden on larger screens
-      .menuIcon {
-        display: none;
-      }
-}
-
-.blogStyle {
-    margin-left: 20px;
-    display: flex;
-    justify-content: flex-start;
-    height: 32px; // Added px to make the value valid
-    width: auto; // Added px to make the value valid               
-}
-
 .header {
-    top: 0px;
-    left: 0px;
     width: 100%;
     height: 80px;
 
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #1F343E;
     opacity: 1;
+};
 
+.headerDropdown {
+    width: 100%;
+    height: 1000px;
 
-    nav {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center; // To evenly space the divs across the header
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #1F343E;
+    opacity: 1;
 
-        div {
-            margin: 0px;
-            width: 544px;
-            display: flex;
-            justify-content: flex-start; // Centers the sub-div horizontally in the div
-            align-items: center; // Centers the sub-div vertically in the div
+    overflow: hidden;
 
-            a {
-                /* Layout Properties */
-                top: 28px;
-                left: 1016px;
-                width: 182px;
-                height: 27px;
-                /* UI Properties */
-                text-align: center;
-                font: normal 20px Noto Sans;
-                letter-spacing: 0px;
-                color: #4EB3E3;
-                opacity: 1;
+}
 
-            }
+.navStyle {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
 
-            div {
-                margin: 20px;
-                height: 32px; 
-                width: auto; 
-            }
+};
+
+.headerContainerStyle {
+    margin: 0px;
+    width: 544px;
+    display: flex;
+    align-items: center;
+
+};
+
+.headerContainerStyleLeft {
+    margin: 0px;
+    width: 544px;
+    display: flex;
+    justify-content: flex-end;
+
+};
+
+.iconStyle {
+    @media (max-width: 600px) {
+        margin: 25px;
+    }
+};
+
+.menuDesktop {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    width: 90%;
+    height: 100%;
+
+};
+
+.linkStyle {
+    a {
+        font: normal normal normal 20px/32px Noto Sans;
+        letter-spacing: 0px;
+        color: #434A54;
+
+        &:hover {
+            color: #4EB3E3; 
         }
     }
+};
 
-    @include responsive-header;
+.dropdownLinks {
+    margin-left: 25px;
+}
+
+.mobileHeaderContainer {
+    width: 100%;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateY(5px); /* Adjust value to desired effect */
+    
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-bottom: 1px solid #1F343E;
+    opacity: 1;
+    
+    margin-top: 0px;
+
+
+
+};
+
+.mobileIconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 }
