@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
@@ -15,9 +15,9 @@ const HeaderLinks: React.FC<HeaderLinksProps> = ({ setDropdown }) => {
     <>
       {isMobile ? (
         <div className={styles.iconStyle}>
-            <a onClick={() => setDropdown(true)}>
-                <img src="/assets/menu.svg" alt="Menu" />
-            </a>
+          <a onClick={() => setDropdown(true)}>
+            <img src="/assets/menu.svg" alt="Menu" />
+          </a>
         </div>
       ) : (
         <div className={styles.menuDesktop}>

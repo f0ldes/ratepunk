@@ -28,7 +28,6 @@ const FooterLinks = () => {
       <div className={styles.linkColumn}>
         <p> QUICK LINKS</p>
 
-
         <a href="/"> Price Comparison </a>
         <a href="/"> Chrome Extension </a>
         <a href="/"> How it works </a>
@@ -77,7 +76,7 @@ const FooterLinks = () => {
         </div>
       </div>
       <div className={styles.tradeMarkMobile}>
-          <p> © 2021 Ratepunk. All Rights Reserved. </p>
+        <p> © 2021 Ratepunk. All Rights Reserved. </p>
       </div>
     </div>
   );
