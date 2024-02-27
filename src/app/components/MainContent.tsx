@@ -3,6 +3,7 @@ import styles from '../styles/MainContent.module.scss'
 import EmailElement from "./Email";
 import StepsContainer from "./Steps";
 
+
 const TextElement = () => {
     return (
         <>
@@ -21,6 +22,7 @@ const TextElement = () => {
 };
 
 const MainContent = () => {
+
   return (
     <div className={styles.mainContent}>
       <div className={styles.leftElement}>
