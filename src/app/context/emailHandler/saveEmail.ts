@@ -35,7 +35,7 @@ const checkEmail = (email:string, error:string, setError: Dispatch<SetStateActio
   } else {
     validationResult = 'Email is required.';
     setError(validationResult);
-  }
+  };
 
   return validationResult;
 };

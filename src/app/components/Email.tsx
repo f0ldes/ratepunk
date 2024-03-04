@@ -2,6 +2,7 @@
 
 import React, { useContext, ChangeEvent, useState } from "react";
 import styles from "../styles/Email.module.scss";
+import ClipLoader from "react-spinners/ClipLoader";
 import { AppContext } from "../context/AppContext";
 import { checkEmail } from "../context/emailHandler/saveEmail";
 
@@ -14,6 +15,7 @@ const ConfirmEmail = () => {
       </p>
     </div>
   );
+
 };
 
 type HandleErrorProps = {
@@ -29,7 +31,9 @@ const ErrorMessage: React.FC<HandleErrorProps> = ({ error }) => {
   );
 };
 
+
 const EmailElement = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { email, setEmail, referalCode, updateEmailAndReferral, isMobile } =
     useContext(AppContext);
   const [error, setError] = useState<string>("");
@@ -45,7 +49,9 @@ const EmailElement = () => {
     if (email) {
       const validateEmail = checkEmail(email, error, setError);
       if (validateEmail === "emailOk") {
+        setIsLoading(true);
         await updateEmailAndReferral(email);
+        setIsLoading(false);
       }
     } else {
       setError("Email is required.");
@@ -57,7 +63,10 @@ const EmailElement = () => {
     try {
       await navigator.clipboard.writeText(textToCopy);
       alert("Link copied to clipboard!");
+      await navigator.clipboard.writeText(textToCopy);
+      alert("Link copied to clipboard!");
     } catch (err) {
+      console.error("Failed to copy: ", err);
       console.error("Failed to copy: ", err);
     }
   };
@@ -88,7 +97,18 @@ const EmailElement = () => {
           </div>
           <div className={styles.buttonField}>
             <button onClick={handleClick}>
-              <strong> Get Refferal Link </strong>
+            {isLoading ? (
+                <div style={{padding: 1}}>
+                  <ClipLoader
+                    color={"#FFFFFF"}
+                    size={30}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                  />
+                </div>
+              ) : (
+                <strong> Get Refferal Link </strong>
+              )}
             </button>
           </div>
         </>
@@ -110,6 +130,7 @@ const EmailElement = () => {
       {referalCode && isMobile && (
         <>
           <div className={styles.referalInput}>
+            <input placeholder={referalCode} value={referalCode} />
             <input placeholder={referalCode} value={referalCode} />
           </div>
           <div className={styles.buttonField}>
@@ -137,7 +158,18 @@ const EmailElement = () => {
           </div>
           <div className={styles.buttonField}>
             <button onClick={handleClick}>
-              <strong> Get Refferal Link </strong>
+              {isLoading ? (
+                <div style={{padding: 1}}>
+                  <ClipLoader
+                    color={"#FFFFFF"}
+                    size={30}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                  />
+                </div>
+              ) : (
+                <strong> Get Refferal Link </strong>
+              )}
             </button>
           </div>
         </>
